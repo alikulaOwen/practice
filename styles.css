@@ -10,7 +10,7 @@ body{
 }
 
 .nav-container{
-    background-color: rgb(8, 182, 182);
+    background-color: white;
     height: 40px;
     width: 100%;
     padding: 2px;
@@ -28,19 +28,22 @@ body{
 .logo{
     display: inline-flex;
     width: 100px; 
-    height: 30px;
+    height: 32px;
     justify-content: center;
     align-items: center;
     position: relative;
+    animation: logomotion 8s ease-in-out infinite;
 }
 .logo-left{
    position: static;
    font-size: 1.6rem;
    font-weight: 700;
+   background-color: black;
+    color: white;
 
 }
 .logo-right{
-    color: white;
+    color: black; 
     right: 5px;
     rotate: -16deg;
     position: absolute;
@@ -49,6 +52,80 @@ body{
     
 }
 .logo-right span {
-    color: black;
+    color: white;
 
+}
+ .navitems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin-right: 10px;
+    list-style: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    //transition: all 0.3s ease-in-out;
+    animation: slideIn 1.2s ease-in-out;
+ }
+.nav-item{
+    color: white;
+    padding: 0 10px;
+}
+.nav-item button{
+    background-color: transparent;
+    font-size: 1 rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+}
+.nav-item button:hover{
+    color: black;
+    background-color: gray;
+    border-radius: 5px;
+    animation: bouncyButton 0.5s ease-in-out infinite;
+}
+
+@keyframes logomotion{
+    0%{
+        transform: translateX(10%);
+    }
+    25%{
+        transform: translateY(-10%);
+    }
+    50%{
+        transform: translateX(-10%);
+    }
+    75%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateX(10%);
+    }
+}
+
+@keyframes bouncyButton {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }

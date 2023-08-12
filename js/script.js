@@ -1,9 +1,4 @@
 // button functions
 
-const createButton= ()=>{
-    const button = document.createElement("button");
+// function to add listen to button event
 
-    button.addEventListener("click", ()=>{
-        
-    })
-}
